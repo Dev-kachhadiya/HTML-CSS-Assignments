@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechNova Insights - Semantic Version</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #222; background: #f5f5f5; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header.site-header { background: #1a1a2e; color: white; padding: 20px 0; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 25px; }
+    nav a { color: #eee; text-decoration: none; font-weight: 500; }
+    nav a:hover { color: #00d4ff; }
+    .hero { background: linear-gradient(135deg, #16213e, #0f3460); color: white; padding: 60px 0; text-align: center; }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 25px; opacity: 0.9; }
+    .btn { display: inline-block; background: #00d4ff; color: #111; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .main-layout { display: grid; grid-template-columns: 1fr 320px; gap: 40px; padding: 50px 0; }
+    article { background: white; border-radius: 10px; padding: 30px; margin-bottom: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    article h2 { font-size: 1.7rem; margin-bottom: 12px; color: #1a1a2e; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 18px; }
+    article p { margin-bottom: 16px; }
+    article ul, article ol { margin: 16px 0 16px 25px; }
+    article li { margin-bottom: 8px; }
+    aside .widget { background: white; border-radius: 10px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    aside h3 { font-size: 1.2rem; margin-bottom: 15px; border-bottom: 2px solid #00d4ff; padding-bottom: 8px; }
+    aside ul { list-style: none; }
+    aside li { margin-bottom: 10px; }
+    aside a { color: #0f3460; text-decoration: none; }
+    aside a:hover { color: #00d4ff; }
+    footer.site-footer { background: #1a1a2e; color: #ccc; padding: 50px 0 25px; margin-top: 40px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 40px; }
+    footer h4 { color: white; margin-bottom: 15px; font-size: 1.1rem; }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 8px; }
+    footer a { color: #aaa; text-decoration: none; }
+    footer a:hover { color: #00d4ff; }
+    .copyright { text-align: center; padding-top: 25px; border-top: 1px solid #333; font-size: 0.9rem; }
+    @media (max-width: 900px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">TechNova Insights</div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#tutorials">Tutorials</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <h1 id="hero-heading">Exploring the Future of Web Development</h1>
+      <p>Deep dives into modern frontend architecture, performance optimization, accessibility, and the evolving standards that shape how we build for the web in 2026 and beyond.</p>
+      <a href="#articles" class="btn">Read Latest Articles</a>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT AREA -->
+  <div class="container main-layout">
+
+    <!-- PRIMARY CONTENT -->
+    <main id="articles">
+
+      <!-- ARTICLE 1 -->
+      <article>
+        <header>
+          <h2>Why Semantic HTML Still Matters in 2026</h2>
+          <p class="meta">Published on <time datetime="2026-08-12">August 12, 2026</time> by <span>Priya Sharma</span> · 12 min read</p>
+        </header>
+        <p>In an era dominated by component libraries, design systems, and AI-assisted coding, it is easy to treat HTML as an afterthought. Many teams ship interfaces that look polished but are built almost entirely from generic containers. The result is a document that machines, assistive technologies, and even future maintainers struggle to understand.</p>
+        <p>Semantic HTML gives meaning to structure. When you use the correct element for the job, you communicate intent without relying solely on class names or JavaScript. Screen readers can announce regions correctly, search engines can extract the main content more reliably, and developers can navigate the source with greater confidence.</p>
+        <p>Consider a typical blog layout. A non-semantic version might contain dozens of nested divs with names such as header-wrapper, nav-list, main-content, article-card, and sidebar-widget. A semantic version replaces those with header, nav, main, article, and aside. The visual outcome can be identical, yet the underlying document is fundamentally richer.</p>
+        <p>Accessibility is the most immediate benefit. Landmark roles are exposed automatically when you use the right tags. Users of screen readers can jump between the banner, navigation, main content, complementary information, and contentinfo regions. Without semantics, those landmarks must be added manually with ARIA, increasing the chance of errors and inconsistency.</p>
+        <p>Search engines also benefit. Although modern ranking systems are sophisticated, clear document structure still helps them identify titles, publication dates, authors, and the primary content of a page. Rich results and knowledge panels often depend on well-structured markup.</p>
+        <p>Maintainability improves as well. When a new developer opens a semantic file, the outline of the page is visible in the tags themselves. There is less need to reverse-engineer the purpose of every class name. Refactoring becomes safer because the roles of major sections are explicit.</p>
+        <p>Finally, progressive enhancement and resilience are stronger. Semantic elements carry default behaviors and expectations. A nav element is recognized as navigation; an article is recognized as a self-contained composition. These defaults survive even when CSS or JavaScript fail to load.</p>
+        <p>The cost of adopting semantic HTML is low. Most of the work is choosing the appropriate element and using headings in a logical hierarchy. The payoff appears in accessibility scores, SEO signals, developer experience, and long-term code health.</p>
+      </article>
+
+      <!-- ARTICLE 2 -->
+      <article>
+        <header>
+          <h2>Building Resilient Layouts with Modern CSS</h2>
+          <p class="meta">Published on <time datetime="2026-08-05">August 5, 2026</time> by <span>James Okonkwo</span> · 15 min read</p>
+        </header>
+        <p>CSS has evolved dramatically. Container queries, cascade layers, native nesting, and improved grid and flexbox capabilities allow us to create layouts that adapt to their context rather than only to the viewport. Yet the foundation of any resilient layout remains a clear document structure.</p>
+        <p>When content is marked up with meaningful elements, CSS can target those elements directly. Selectors become more stable and less dependent on brittle class combinations. A sticky table of contents can be attached to an aside; a reading progress indicator can observe the main element; print styles can hide navigation and sidebars with simple element selectors.</p>
+        <p>Consider the classic two-column blog layout. With semantic tags the primary column is main and the secondary column is aside. Media queries and container queries can then adjust the relationship between these two regions without hunting through layers of wrapper divs. The same principle applies to card grids inside section elements and to footers that contain multiple address or navigation blocks.</p>
+        <p>Performance also benefits indirectly. Browsers can make better assumptions about the importance of different parts of the page. Critical rendering path optimizations and accessibility tree construction both gain from accurate semantics.</p>
+        <p>In practice, teams that invest in semantic structure find that their CSS becomes shorter and more predictable. Utility classes still have a place, especially for spacing and color, but the major structural decisions are expressed in the HTML itself.</p>
+        <p>Here are several patterns that work particularly well:</p>
+        <ul>
+          <li>Use <code>header</code> for the site-wide banner and for article-level headers.</li>
+          <li>Wrap primary navigation in <code>nav</code> and give it an accessible name if multiple navs exist.</li>
+          <li>Place the core page content inside <code>main</code>. There should be only one main per page.</li>
+          <li>Treat each independent story or post as an <code>article</code>.</li>
+          <li>Group related content with <code>section</code> and provide a heading for each section.</li>
+          <li>Use <code>aside</code> for complementary content such as related links, author bios, or advertising.</li>
+          <li>Close the page with <code>footer</code> containing copyright, secondary links, and contact information.</li>
+        </ul>
+        <p>These conventions are not rigid rules; they are widely understood signals that improve communication between humans and machines.</p>
+      </article>
+
+      <!-- ARTICLE 3 -->
+      <article>
+        <header>
+          <h2>A Practical Guide to Heading Hierarchy</h2>
+          <p class="meta">Published on <time datetime="2026-07-28">July 28, 2026</time> by <span>Elena Petrova</span> · 9 min read</p>
+        </header>
+        <p>Headings are one of the most powerful and most frequently misused parts of HTML. A correct heading hierarchy creates an outline of the document that both users and tools can follow. Skipping levels or using headings purely for visual styling breaks that outline.</p>
+        <p>The rule is simple: start with one <code>h1</code> that describes the page, then use <code>h2</code> for major sections, <code>h3</code> for subsections, and so on. Do not skip levels. Do not use heading tags just because you want large bold text; use CSS for appearance and headings for structure.</p>
+        <p>Screen reader users often navigate by headings. When the hierarchy is logical, they can jump from section to section efficiently. When it is broken, the page becomes a confusing list of disconnected titles.</p>
+        <p>Search engines also use headings to understand topic structure. A well-organized heading tree reinforces the primary subjects of the page and can improve the quality of extracted summaries.</p>
+        <p>In component-driven development it is tempting to let every card or widget start with an <code>h2</code> or <code>h3</code> regardless of context. The result is multiple competing outlines. A better approach is to let the parent page or layout define the current heading level and pass that information down, or to use <code>aria-level</code> when the visual design requires a different size.</p>
+        <p>Testing heading structure is straightforward. Browser extensions and accessibility scanners can generate the document outline. Reviewing that outline should be part of every pull request that touches content structure.</p>
+      </article>
+
+      <!-- ARTICLE 4 -->
+      <article>
+        <header>
+          <h2>Landmarks, ARIA, and the Accessibility Tree</h2>
+          <p class="meta">Published on <time datetime="2026-07-15">July 15, 2026</time> by <span>Marcus Chen</span> · 11 min read</p>
+        </header>
+        <p>HTML5 introduced a set of sectioning and landmark elements that map directly to accessibility roles. When used correctly, these elements populate the accessibility tree with useful regions that assistive technologies can expose to users.</p>
+        <p>The most important landmarks are:</p>
+        <ul>
+          <li><strong>banner</strong> – typically the header of the page</li>
+          <li><strong>navigation</strong> – any nav element</li>
+          <li><strong>main</strong> – the main content of the document</li>
+          <li><strong>complementary</strong> – content in an aside</li>
+          <li><strong>contentinfo</strong> – the footer of the page</li>
+          <li><strong>region</strong> – a generic section that has an accessible name</li>
+          <li><strong>form</strong>, <strong>search</strong>, and others for specialized content</li>
+        </ul>
+        <p>If you build the same page with only divs, none of these landmarks appear automatically. You must add role attributes and often aria-label or aria-labelledby. That extra work is easy to forget and easy to get wrong. Semantic elements give you the landmarks for free.</p>
+        <p>There are still valid reasons to use ARIA. Custom widgets, dynamic updates, and complex interactions frequently require it. The guiding principle remains: prefer native HTML semantics first, then add ARIA only when the native vocabulary is insufficient.</p>
+        <p>A practical workflow is to write the page with semantic tags, verify the accessibility tree and landmark list, and only then introduce ARIA where gaps remain. This approach keeps the markup cleaner and reduces the surface area for accessibility bugs.</p>
+      </article>
+
+      <!-- ARTICLE 5 -->
+      <article>
+        <header>
+          <h2>Case Study: Refactoring a Div-Heavy Codebase</h2>
+          <p class="meta">Published on <time datetime="2026-07-03">July 3, 2026</time> by <span>Aisha Rahman</span> · 14 min read</p>
+        </header>
+        <p>Last year our team inherited a large marketing site that had grown organically for nearly a decade. Almost every structural element was a div. Class names were inconsistent, some regions had ARIA roles bolted on after the fact, and the accessibility score hovered in the low seventies.</p>
+        <p>We decided to refactor the highest-traffic templates toward semantic HTML. The process was incremental. We began with the global header and footer, then moved to article templates, then to landing pages. At each step we preserved visual design and existing CSS as much as possible by mapping old class names onto the new elements.</p>
+        <p>The results were measurable. Landmark navigation became available to screen reader users without any additional ARIA. The document outline stabilized. Several SEO tools reported clearer content signals. Most importantly, new developers could orient themselves in the templates far more quickly.</p>
+        <p>We also discovered a few edge cases. Some third-party embeds expected certain wrapper structures. A handful of legacy scripts queried elements by tag name and broke when divs became sections. These issues were solvable and ultimately improved the robustness of the codebase.</p>
+        <p>The key lesson was that semantic HTML is not an all-or-nothing rewrite. It can be introduced gradually, starting with the most visible and most reused components. Each improvement compounds.</p>
+      </article>
+
+      <!-- ARTICLE 6 -->
+      <article>
+        <header>
+          <h2>Performance and Semantics: An Indirect Relationship</h2>
+          <p class="meta">Published on <time datetime="2026-06-20">June 20, 2026</time> by <span>Daniel Foster</span> · 8 min read</p>
+        </header>
+        <p>Semantic HTML does not magically make a page load faster. The bytes of a section tag are essentially the same as the bytes of a div. However, clearer structure often leads to better engineering decisions that do affect performance.</p>
+        <p>When the main content is easy to identify, teams are more likely to prioritize its rendering. Critical CSS can target the main element and its headings. Lazy-loading strategies can treat complementary content differently from primary content. Prefetching and prerendering logic can focus on the most important regions.</p>
+        <p>In addition, semantic pages tend to accumulate fewer wrapper elements. Every unnecessary div adds a node to the DOM, a style calculation, and a potential layout participant. Over hundreds of components the difference becomes noticeable.</p>
+        <p>None of these benefits are automatic. They require developers to act on the information that semantic markup provides. The markup simply makes the right decisions easier to see and easier to implement consistently.</p>
+      </article>
+
+    </main>
+
+    <!-- SIDEBAR / COMPLEMENTARY CONTENT -->
+    <aside aria-label="Sidebar">
+
+      <section class="widget">
+        <h3>About the Publication</h3>
+        <p>TechNova Insights is an independent technical journal focused on frontend architecture, web standards, accessibility, and the craft of building reliable user interfaces. Founded in 2019, we publish in-depth articles by practicing engineers and designers.</p>
+      </section>
+
+      <section class="widget">
+        <h3>Popular Topics</h3>
+        <ul>
+          <li><a href="#">Semantic HTML &amp; Accessibility</a></li>
+          <li><a href="#">CSS Architecture</a></li>
+          <li><a href="#">Performance Optimization</a></li>
+          <li><a href="#">Design Systems</a></li>
+          <li><a href="#">JavaScript Patterns</a></li>
+          <li><a href="#">Web Components</a></li>
+          <li><a href="#">Testing Strategies</a></li>
+          <li><a href="#">Developer Experience</a></li>
+        </ul>
+      </section>
+
+      <section class="widget">
+        <h3>Recent Articles</h3>
+        <ul>
+          <li><a href="#">Why Semantic HTML Still Matters in 2026</a></li>
+          <li><a href="#">Building Resilient Layouts with Modern CSS</a></li>
+          <li><a href="#">A Practical Guide to Heading Hierarchy</a></li>
+          <li><a href="#">Landmarks, ARIA, and the Accessibility Tree</a></li>
+          <li><a href="#">Case Study: Refactoring a Div-Heavy Codebase</a></li>
+          <li><a href="#">Performance and Semantics: An Indirect Relationship</a></li>
+        </ul>
+      </section>
+
+      <section class="widget">
+        <h3>Newsletter</h3>
+        <p>Get one carefully curated article every week. No spam, unsubscribe anytime.</p>
+        <form style="margin-top: 12px;">
+          <label for="email" class="visually-hidden" style="position:absolute;left:-9999px;">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" style="width: 100%; padding: 10px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px;" required>
+          <button type="submit" style="width: 100%; padding: 10px; background: #0f3460; color: white; border: none; border-radius: 4px; cursor: pointer;">Subscribe</button>
+        </form>
+      </section>
+
+      <section class="widget">
+        <h3>Contributors</h3>
+        <ul>
+          <li>Priya Sharma – Editor in Chief</li>
+          <li>James Okonkwo – CSS &amp; Layout</li>
+          <li>Elena Petrova – Accessibility</li>
+          <li>Marcus Chen – Standards</li>
+          <li>Aisha Rahman – Case Studies</li>
+          <li>Daniel Foster – Performance</li>
+        </ul>
+      </section>
+
+    </aside>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <section>
+          <h4>TechNova Insights</h4>
+          <p>Independent writing on the craft of building for the web. We believe clear structure leads to better products.</p>
+        </section>
+        <nav aria-label="Footer Explore">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">All Articles</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Newsletters</a></li>
+            <li><a href="#">Archives</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer Resources">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">HTML Living Standard</a></li>
+            <li><a href="#">WCAG Guidelines</a></li>
+            <li><a href="#">MDN Web Docs</a></li>
+            <li><a href="#">web.dev</a></li>
+            <li><a href="#">A11y Project</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer Connect">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">RSS Feed</a></li>
+            <li><a href="#">Contact Form</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="copyright">
+        © 2026 TechNova Insights. All rights reserved. Built with care for structure and accessibility.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Forms - All Assignments (1-42)</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f4f4f4; color: #222; }
+  h1 { text-align: center; }
+  section { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; }
+  h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+  p.desc { color: #555; font-style: italic; }
+  label { display: block; margin-top: 10px; }
+  input, select, textarea, button { margin-top: 4px; padding: 6px; }
+  fieldset { margin-top: 10px; }
+  hr { border: none; border-top: 3px solid #3498db; margin: 40px 0; }
+</style>
+</head>
+<body>
+
+<h1>HTML Forms — Assignments 1 to 42</h1>
+
+<!-- 1 -->
+<section>
+<h2>1. Basic Form Structure</h2>
+<p class="desc">A complete basic form that sends data to a server using POST.</p>
+<form action="/submit.php" method="post" autocomplete="on">
+  <label for="a1name">Name:</label>
+  <input type="text" id="a1name" name="name">
+  <button type="submit">Submit</button>
+</form>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2. Form with GET Method</h2>
+<p class="desc">A form that uses the GET method with a search input.</p>
+<form action="/search" method="get">
+  <label for="a2search">Search:</label>
+  <input type="search" id="a2search" name="q">
+  <button type="submit">Search</button>
+</form>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3. Form without Browser Validation</h2>
+<p class="desc">Uses novalidate so required fields don't trigger browser validation.</p>
+<form action="/submit.php" method="post" novalidate>
+  <label for="a3email">Email:</label>
+  <input type="email" id="a3email" name="email" required>
+  <button type="submit">Submit</button>
+</form>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4. Understanding enctype - Default Value</h2>
+<p class="desc">A normal form explicitly using the default encoding type.</p>
+<form action="/submit.php" method="post" enctype="application/x-www-form-urlencoded">
+  <!-- application/x-www-form-urlencoded is the default enctype used when a form
+       has no file uploads; it encodes data as key=value pairs like a URL query string -->
+  <label for="a4name">Name:</label>
+  <input type="text" id="a4name" name="name">
+  <label for="a4email">Email:</label>
+  <input type="email" id="a4email" name="email">
+  <button type="submit">Submit</button>
+</form>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5. File Upload Form (Most Important enctype)</h2>
+<p class="desc">A form that uploads a file using multipart/form-data.</p>
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <label for="a5file">Choose file:</label>
+  <input type="file" id="a5file" name="uploadedFile">
+  <button type="submit">Upload</button>
+</form>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6. Form Using text/plain Encoding</h2>
+<p class="desc">A form that uses plain-text encoding (rarely used in real projects).</p>
+<form action="/submit.php" method="post" enctype="text/plain">
+  <label for="a6f1">First value:</label>
+  <input type="text" id="a6f1" name="value1">
+  <label for="a6f2">Second value:</label>
+  <input type="text" id="a6f2" name="value2">
+  <button type="submit">Submit</button>
+</form>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7. Form with Name and Target</h2>
+<p class="desc">A named form that opens the response in a new tab.</p>
+<form name="userForm" action="/submit.php" method="post" target="_blank">
+  <label for="a7input">Value:</label>
+  <input type="text" id="a7input" name="value">
+  <button type="submit">Submit</button>
+</form>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>8. Proper Use of Label</h2>
+<p class="desc">A form field correctly associated with its label for accessibility.</p>
+<form>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+</form>
+</section>
+
+<!-- 9 -->
+<section>
+<h2>9. Radio Button Group with Labels</h2>
+<p class="desc">A gender selection using properly labeled radio buttons.</p>
+<form>
+  <label for="a9male">Male</label>
+  <input type="radio" id="a9male" name="gender" value="male" checked>
+  <label for="a9female">Female</label>
+  <input type="radio" id="a9female" name="gender" value="female">
+</form>
+</section>
+
+<!-- 10 -->
+<section>
+<h2>10. Multiple Checkboxes</h2>
+<p class="desc">A list of hobbies using checkboxes, with one pre-checked.</p>
+<form>
+  <label for="a10read">Reading</label>
+  <input type="checkbox" id="a10read" name="hobbies" value="reading" checked>
+  <label for="a10music">Music</label>
+  <input type="checkbox" id="a10music" name="hobbies" value="music">
+  <label for="a10sports">Sports</label>
+  <input type="checkbox" id="a10sports" name="hobbies" value="sports">
+</form>
+</section>
+
+<!-- 11 -->
+<section>
+<h2>11. Drop-down List (Single Select)</h2>
+<p class="desc">A simple drop-down for selecting a car brand.</p>
+<form>
+  <label for="a11cars">Car brand:</label>
+  <select name="cars" id="a11cars">
+    <option value="toyota">Toyota</option>
+    <option value="honda">Honda</option>
+    <option value="ford">Ford</option>
+  </select>
+</form>
+</section>
+
+<!-- 12 -->
+<section>
+<h2>12. Multi-select Drop-down</h2>
+<p class="desc">A select box that allows multiple choices at once.</p>
+<form>
+  <label for="a12colors">Favorite colors:</label>
+  <select name="colors" id="a12colors" multiple size="3">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="yellow">Yellow</option>
+  </select>
+</form>
+</section>
+
+<!-- 13 -->
+<section>
+<h2>13. Grouped Options with optgroup</h2>
+<p class="desc">A select menu that groups fruits into categories.</p>
+<form>
+  <label for="a13fruits">Fruit:</label>
+  <select name="fruit" id="a13fruits">
+    <optgroup label="Citrus">
+      <option value="orange">Orange</option>
+      <option value="lemon">Lemon</option>
+    </optgroup>
+    <optgroup label="Tropical">
+      <option value="mango">Mango</option>
+      <option value="pineapple">Pineapple</option>
+    </optgroup>
+  </select>
+</form>
+</section>
+
+<!-- 14 -->
+<section>
+<h2>14. Multi-line Text Area</h2>
+<p class="desc">A message box for user comments.</p>
+<form>
+  <label for="a14msg">Message:</label>
+  <textarea id="a14msg" name="message" rows="4" cols="50" placeholder="Type your comments here..."></textarea>
+</form>
+</section>
+
+<!-- 15 -->
+<section>
+<h2>15. Button Types</h2>
+<p class="desc">Three different button types inside one form.</p>
+<form>
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+  <button type="button">Click Me</button>
+</form>
+</section>
+
+<!-- 16 -->
+<section>
+<h2>16. Fieldset and Legend</h2>
+<p class="desc">Personal information fields grouped inside a fieldset.</p>
+<form>
+  <fieldset>
+    <legend>Personal Information</legend>
+    <label for="a16name">Name:</label>
+    <input type="text" id="a16name" name="name">
+    <label for="a16age">Age:</label>
+    <input type="number" id="a16age" name="age">
+  </fieldset>
+</form>
+</section>
+
+<!-- 17 -->
+<section>
+<h2>17. Disabled Fieldset</h2>
+<p class="desc">A fieldset that cannot be edited by the user.</p>
+<form>
+  <fieldset disabled>
+    <legend>Locked Account Info</legend>
+    <label for="a17user">Username:</label>
+    <input type="text" id="a17user" name="username">
+    <label for="a17pass">Password:</label>
+    <input type="password" id="a17pass" name="password">
+  </fieldset>
+</form>
+</section>
+
+<!-- 18 -->
+<section>
+<h2>18. Datalist for Autocomplete Suggestions</h2>
+<p class="desc">An input offering browser suggestions from a linked datalist.</p>
+<form>
+  <label for="a18browser">Pick a browser:</label>
+  <input list="browsers" id="a18browser" name="browser">
+  <datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Safari">
+  </datalist>
+</form>
+</section>
+
+<!-- 19 -->
+<section>
+<h2>19. Password Field with Constraints</h2>
+<p class="desc">A secure password input with a minimum length requirement.</p>
+<form>
+  <label for="a19pwd">Password:</label>
+  <input type="password" id="a19pwd" name="password" required minlength="8">
+</form>
+</section>
+
+<!-- 20 -->
+<section>
+<h2>20. Email Input with Multiple Values</h2>
+<p class="desc">An email field that accepts more than one comma-separated address.</p>
+<form>
+  <label for="a20emails">Emails:</label>
+  <input type="email" id="a20emails" name="emails" multiple placeholder="e.g. a@x.com, b@y.com">
+</form>
+</section>
+
+<!-- 21 -->
+<section>
+<h2>21. Date Picker with Range</h2>
+<p class="desc">A date input limited to the year 2023.</p>
+<form>
+  <label for="a21date">Date:</label>
+  <input type="date" id="a21date" name="date" min="2023-01-01" max="2023-12-31">
+</form>
+</section>
+
+<!-- 22 -->
+<section>
+<h2>22. Number Input with Step</h2>
+<p class="desc">A quantity field allowing whole numbers between 1 and 10.</p>
+<form>
+  <label for="a22qty">Quantity:</label>
+  <input type="number" id="a22qty" name="quantity" min="1" max="10" step="1">
+</form>
+</section>
+
+<!-- 23 -->
+<section>
+<h2>23. Range Slider</h2>
+<p class="desc">A volume control slider with a default value.</p>
+<form>
+  <label for="a23vol">Volume:</label>
+  <input type="range" id="a23vol" name="volume" min="0" max="100" value="50">
+</form>
+</section>
+
+<!-- 24 -->
+<section>
+<h2>24. File Input with Restrictions</h2>
+<p class="desc">A file upload field that only accepts PDF and DOCX files.</p>
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <label for="a24file">Upload document:</label>
+  <input type="file" id="a24file" name="document" accept=".pdf,.docx" required>
+</form>
+</section>
+
+<!-- 25 -->
+<section>
+<h2>25. Hidden Input</h2>
+<p class="desc">A hidden field storing a session token, invisible to the user.</p>
+<form>
+  <input type="hidden" name="sessionToken" value="abc123XYZ">
+  <label for="a25name">Name:</label>
+  <input type="text" id="a25name" name="name">
+</form>
+</section>
+
+<!-- 26 -->
+<section>
+<h2>26. Color Picker</h2>
+<p class="desc">A favorite-color selector with a default value.</p>
+<form>
+  <label for="a26color">Favorite color:</label>
+  <input type="color" id="a26color" name="favColor" value="#ff0000">
+</form>
+</section>
+
+<!-- 27 -->
+<section>
+<h2>27. Telephone Input with Pattern</h2>
+<p class="desc">A phone number field with a basic pattern format.</p>
+<form>
+  <label for="a27tel">Phone:</label>
+  <input type="tel" id="a27tel" name="phone" pattern="[0-9]{10}" placeholder="10-digit number">
+</form>
+</section>
+
+<!-- 28 -->
+<section>
+<h2>28. URL Input</h2>
+<p class="desc">A website field that requires a valid URL.</p>
+<form>
+  <label for="a28url">Website:</label>
+  <input type="url" id="a28url" name="website" required placeholder="https://example.com">
+</form>
+</section>
+
+<!-- 29 -->
+<section>
+<h2>29. Search Field with Autofocus</h2>
+<p class="desc">A search box that receives focus automatically on page load.</p>
+<form>
+  <label for="a29search">Search:</label>
+  <input type="search" id="a29search" name="q" autofocus placeholder="Search...">
+</form>
+</section>
+
+<!-- 30 -->
+<section>
+<h2>30. Using the form Attribute (Input Outside Form)</h2>
+<p class="desc">An input physically outside the form tags but still linked to it.</p>
+<form id="a30form" action="/submit.php" method="post"></form>
+<label for="a30outside">Outside input:</label>
+<input type="text" id="a30outside" name="outsideField" form="a30form">
+</section>
+
+<!-- 31 -->
+<section>
+<h2>31. formaction Override</h2>
+<p class="desc">Two submit buttons sending data to different URLs.</p>
+<form action="/default-submit" method="post">
+  <label for="a31data">Data:</label>
+  <input type="text" id="a31data" name="data">
+  <button type="submit">Submit (default)</button>
+  <button type="submit" formaction="/alternate-submit">Submit (alternate URL)</button>
+</form>
+</section>
+
+<!-- 32 -->
+<section>
+<h2>32. formmethod Override</h2>
+<p class="desc">A form submitted with either POST or GET depending on the button.</p>
+<form action="/submit.php" method="post">
+  <label for="a32data">Data:</label>
+  <input type="text" id="a32data" name="data">
+  <button type="submit">Submit (POST)</button>
+  <button type="submit" formmethod="get">Submit (GET)</button>
+</form>
+</section>
+
+<!-- 33 -->
+<section>
+<h2>33. formnovalidate</h2>
+<p class="desc">A registration form with a "Save as Draft" button that skips validation.</p>
+<form action="/register" method="post">
+  <label for="a33email">Email:</label>
+  <input type="email" id="a33email" name="email" required>
+  <button type="submit">Register</button>
+  <button type="submit" formnovalidate>Save as Draft</button>
+</form>
+</section>
+
+<!-- 34 -->
+<section>
+<h2>34. formtarget</h2>
+<p class="desc">A normal submit plus a "Preview in new tab" button.</p>
+<form action="/submit.php" method="post">
+  <label for="a34data">Data:</label>
+  <input type="text" id="a34data" name="data">
+  <button type="submit">Submit</button>
+  <button type="submit" formtarget="_blank">Preview in new tab</button>
+</form>
+</section>
+
+<!-- 35 -->
+<section>
+<h2>35. Complete Login Form</h2>
+<p class="desc">A realistic login form with username and password.</p>
+<form action="/login" method="post">
+  <label for="a35user">Username:</label>
+  <input type="text" id="a35user" name="username" required>
+  <label for="a35pass">Password:</label>
+  <input type="password" id="a35pass" name="password" required minlength="8">
+  <button type="submit">Login</button>
+</form>
+</section>
+
+<!-- 36 -->
+<section>
+<h2>36. Complete Registration Form with Fieldsets</h2>
+<p class="desc">A user registration form organized into two fieldsets.</p>
+<form action="/register" method="post">
+  <fieldset>
+    <legend>Personal Information</legend>
+    <label for="a36name">Name:</label>
+    <input type="text" id="a36name" name="name" required>
+    <label for="a36email">Email:</label>
+    <input type="email" id="a36email" name="email" required>
+  </fieldset>
+  <fieldset>
+    <legend>Preferences</legend>
+    <label for="a36news">Subscribe to newsletter</label>
+    <input type="checkbox" id="a36news" name="newsletter">
+  </fieldset>
+  <button type="submit">Register</button>
+</form>
+</section>
+
+<!-- 37 -->
+<section>
+<h2>37. Contact Us Form</h2>
+<p class="desc">A contact form with name, email, and message.</p>
+<form action="/contact" method="post">
+  <label for="a37name">Name:</label>
+  <input type="text" id="a37name" name="name" required>
+  <label for="a37email">Email:</label>
+  <input type="email" id="a37email" name="email" required>
+  <label for="a37msg">Message:</label>
+  <textarea id="a37msg" name="message" rows="4" cols="40" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+</section>
+
+<!-- 38 -->
+<section>
+<h2>38. Survey / Feedback Form</h2>
+<p class="desc">A short feedback form with a slider, radios, and a textarea.</p>
+<form action="/feedback" method="post">
+  <label for="a38sat">Satisfaction (1-10):</label>
+  <input type="range" id="a38sat" name="satisfaction" min="1" max="10" value="5">
+  <p>Would you recommend us?</p>
+  <label for="a38yes">Yes</label>
+  <input type="radio" id="a38yes" name="recommend" value="yes">
+  <label for="a38no">No</label>
+  <input type="radio" id="a38no" name="recommend" value="no">
+  <label for="a38comments">Comments:</label>
+  <textarea id="a38comments" name="comments" rows="3" cols="40"></textarea>
+  <button type="submit">Submit Feedback</button>
+</form>
+</section>
+
+<!-- 39 -->
+<section>
+<h2>39. Complete File Upload Form</h2>
+<p class="desc">A form uploading both a resume and a profile photo.</p>
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <label for="a39resume">Resume (PDF/DOCX):</label>
+  <input type="file" id="a39resume" name="resume" accept=".pdf,.docx" required>
+  <label for="a39photo">Profile Photo:</label>
+  <input type="file" id="a39photo" name="photo" accept="image/*">
+  <button type="submit">Upload</button>
+</form>
+</section>
+
+<!-- 40 -->
+<section>
+<h2>40. Search Form Using GET</h2>
+<p class="desc">A simple site search form using the GET method.</p>
+<form action="/search" method="get">
+  <label for="a40search">Search:</label>
+  <input type="search" id="a40search" name="q" autofocus placeholder="Search the site...">
+  <button type="submit">Search</button>
+</form>
+</section>
+
+<!-- 41 -->
+<section>
+<h2>41. Advanced Form Combining Many Features</h2>
+<p class="desc">A comprehensive job-application form combining fieldsets, file upload, radios, checkbox, and dual submit buttons.</p>
+<form action="/apply" method="post" enctype="multipart/form-data">
+  <fieldset>
+    <legend>Personal Details</legend>
+    <label for="a41name">Name:</label>
+    <input type="text" id="a41name" name="name" required>
+    <label for="a41email">Email:</label>
+    <input type="email" id="a41email" name="email" required>
+    <label for="a41phone">Phone:</label>
+    <input type="tel" id="a41phone" name="phone" required>
+  </fieldset>
+
+  <fieldset>
+    <legend>Experience</legend>
+    <label for="a41exp">Describe your experience:</label>
+    <textarea id="a41exp" name="experience" rows="4" cols="40"></textarea>
+  </fieldset>
+
+  <label for="a41resume">Resume (PDF only):</label>
+  <input type="file" id="a41resume" name="resume" accept=".pdf" required>
+
+  <fieldset>
+    <legend>Employment Type</legend>
+    <label for="a41fulltime">Full-time</label>
+    <input type="radio" id="a41fulltime" name="employmentType" value="fulltime" checked>
+    <label for="a41parttime">Part-time</label>
+    <input type="radio" id="a41parttime" name="employmentType" value="parttime">
+    <label for="a41intern">Internship</label>
+    <input type="radio" id="a41intern" name="employmentType" value="internship">
+  </fieldset>
+
+  <label for="a41terms">I agree to the terms and conditions</label>
+  <input type="checkbox" id="a41terms" name="terms" required>
+
+  <br><br>
+  <button type="submit">Submit Application</button>
+  <button type="submit" formnovalidate>Save Draft</button>
+</form>
+</section>
+
+<!-- 42 -->
+<section>
+<h2>42. Form Demonstrating All Major Override Attributes</h2>
+<p class="desc">A simple form with a default action/method/target on the form itself, and four submit buttons each overriding one attribute — so the effect of formaction, formmethod, formnovalidate, and formtarget is easy to see.</p>
+<form action="/default-submit" method="post" target="_self">
+  <label for="a42name">Name:</label>
+  <input type="text" id="a42name" name="name" required>
+  <label for="a42email">Email:</label>
+  <input type="email" id="a42email" name="email" required>
+
+  <br><br>
+  <button type="submit">Normal Submit (default action/method/target)</button>
+  <br>
+  <button type="submit" formaction="/alternate-submit">Submit (formaction override)</button>
+  <br>
+  <button type="submit" formmethod="get">Submit (formmethod override → GET)</button>
+  <br>
+  <button type="submit" formnovalidate>Submit (formnovalidate → skips required check)</button>
+  <br>
+  <button type="submit" formtarget="_blank">Submit (formtarget → opens new tab)</button>
+</form>
+</section>
+
+</body>
+</html>

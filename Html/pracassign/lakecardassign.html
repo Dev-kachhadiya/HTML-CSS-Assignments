@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lake Card</title>
+<style>
+  body {
+    margin: 0;
+    padding: 40px 0;
+    background: #f3f2f7;
+  }
+
+  .card {
+    width: 320px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 14px;
+  
+  }
+
+  .card .lake {
+    width: 100%;
+    height: 260px;
+    border-radius: 14px;
+    
+  }
+
+  .tags {
+    margin-top: 16px;
+  }
+
+  .tags span {
+    display: inline-block;
+    background: #f0eef7;
+    color: #6b6b6b;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-right: 8px;
+  }
+
+  .card h2 {
+    margin: 16px 0 10px;
+    font-size: 24px;
+    color: #2b2b2b;
+  }
+
+  .card p {
+    margin: 0 0 20px;
+    font-size: 14px;
+  
+    color: #8a8a8a;
+  }
+
+  .read-more {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 24px;
+    background: #d8d6f5;
+    color: #5b4fc4;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://www.magnific.com/free-photos-vectors/beautiful-lake">
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c9d6e8"/>
+          <stop offset="100%" stop-color="#e6ecf4"/>
+        </linearGradient>
+        <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2c6e8e"/>
+          <stop offset="100%" stop-color="#1a4a63"/>
+        </linearGradient>
+      </defs>
+      <rect width="400" height="260" fill="url(#sky)"/>
+      <polygon points="0,150 60,90 110,140 160,70 210,150 260,100 320,150 400,110 400,170 0,170" fill="#7d95a8"/>
+      <polygon points="0,170 60,150 130,175 200,150 280,180 400,150 400,260 0,260" fill="url(#water)"/>
+      <ellipse cx="150" cy="215" rx="22" ry="7" fill="#3a2a1e"/>
+      <rect x="128" y="205" width="44" height="10" rx="4" fill="#4a3526"/>
+      <circle cx="300" cy="60" r="20" fill="#fff" opacity="0.85"/>
+    </svg>
+    <div class="tags">
+      <span>Nature</span>
+      <span>Lake</span>
+    </div>
+    <h2>Lake Bled</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Consectetur sodales morbi dignissim sed diam pharetra vitae ipsum odio.
+    </p>
+    <button class="read-more">Read More</button>
+  </div>
+
+</body>
+</html>

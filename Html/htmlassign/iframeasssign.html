@@ -1,0 +1,409 @@
+# Iframe Assignment — Simple Answers (Q1–Q30)
+
+> Only allowed `allow` values used across all answers: `fullscreen`, `gyroscope`, `usb`
+
+---
+
+## 1. Basic iframe embed
+```html
+<!DOCTYPE html>
+<html>
+<head><title>Q1</title></head>
+<body>
+  <iframe src="https://www.example.com" width="100%" height="400"
+    title="Example Website" style="border:none;"></iframe>
+</body>
+</html>
+```
+
+## 2. Link + iframe using target/name
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <a href="https://www.example.com" target="myFrame">Open Example Site</a>
+  <iframe name="myFrame" src="" width="100%" height="300" title="Content Frame"></iframe>
+</body>
+</html>
+```
+
+## 3. YouTube-style video iframe
+```html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ebe9NFgQnnU?si=E_SV7Exw6X0yMRI-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  src="<iframe width="560" height="315" src="https://www.youtube.com/embed/hp5ib30dq7w?si=x3hdFBVnqvweYrBX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
+  title="YouTube video"
+  allow="fullscreen; gyroscope"
+  allowfullscreen></iframe>
+```
+
+## 4. Responsive iframe with CSS class
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.responsive-iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+  <iframe class="responsive-iframe" src="https://www.example.com" title="Responsive Frame"></iframe>
+</body>
+</html>
+```
+
+## 5. Iframe with only fullscreen
+```html
+<iframe src="https://www.example.com" width="800" height="450"
+  allow="fullscreen" title="Video or Map Example"></iframe>
+```
+
+## 6. Iframe with only gyroscope
+```html
+<iframe src="https://www.example.com" width="100%" height="500"
+  allow="gyroscope" title="Interactive Content"></iframe>
+```
+
+## 7. Iframe with only usb
+```html
+<iframe src="https://device.example.com" width="600" height="400"
+  allow="usb" title="USB Device Frame"></iframe>
+```
+
+## 8. Iframe combining fullscreen, gyroscope, usb
+```html
+<iframe src="https://www.example.com" width="700" height="450"
+  allow="fullscreen; gyroscope; usb" title="Combined Permissions Frame"></iframe>
+```
+
+## 9. Two iframes side by side (fullscreen / gyroscope)
+```html
+<iframe src="https://www.example.com" width="48%" height="350"
+  allow="fullscreen" title="Fullscreen Frame"></iframe>
+<iframe src="https://www.example.com" width="48%" height="350"
+  allow="gyroscope" title="Gyroscope Frame"></iframe>
+```
+
+## 10. Nav menu of 3 links + one named iframe
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <nav>
+    <a href="https://www.example.com" target="siteFrame">Example</a>
+    <a href="https://www.wikipedia.org" target="siteFrame">Wikipedia</a>
+    <a href="https://www.mozilla.org" target="siteFrame">Mozilla</a>
+  </nav>
+  <iframe name="siteFrame" src="" width="100%" height="400" title="Nav Frame"></iframe>
+</body>
+</html>
+```
+
+## 11. Video-style iframe with gyroscope + fullscreen
+```html
+<iframe width="560" height="315"
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  allow="fullscreen; gyroscope"
+  allowfullscreen
+  title="Video with Gyroscope"></iframe>
+```
+
+## 12. Iframe with NO allow attribute (most restrictive)
+```html
+<iframe src="https://www.example.com" style="width:100%; height:300px; border:none;"
+  title="No Permissions Frame"></iframe>
+```
+
+## 13. Fully responsive iframe (padding-bottom technique)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.frame-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+}
+.frame-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+</style>
+</head>
+<body>
+  <div class="frame-wrapper">
+    <iframe src="https://www.example.com" title="Responsive Aspect Ratio Frame"></iframe>
+  </div>
+</body>
+</html>
+```
+
+## 14. Page with heading, paragraph, 2 iframes
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>My Devices Page</h1>
+  <p>This page demonstrates two iframes with different permissions.</p>
+
+  <iframe src="https://device.example.com" width="500" height="300"
+    allow="usb" title="USB Frame"></iframe>
+
+  <iframe src="https://www.example.com" width="700" height="400"
+    allow="fullscreen" title="Fullscreen Frame"></iframe>
+</body>
+</html>
+```
+
+## 15. Fix the incomplete iframe code
+```html
+<iframe src="https://www.example.com" width="100%" height="400"
+  allow="fullscreen; gyroscope; usb"
+  title="Fixed Iframe"
+  style="border:none;"></iframe>
+```
+
+## 16. Iframe: fullscreen + gyroscope + allowfullscreen
+```html
+<iframe src="https://www.example.com" width="600" height="400"
+  allow="fullscreen; gyroscope"
+  allowfullscreen
+  title="Interactive Demo"></iframe>
+```
+
+## 17. Device control page (usb + gyroscope side by side)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.device-frame { width: 45%; display: inline-block; }
+</style>
+</head>
+<body>
+  <iframe class="device-frame" src="https://device.example.com" height="300"
+    allow="usb" title="USB Control"></iframe>
+  <iframe class="device-frame" src="https://device.example.com" height="300"
+    allow="gyroscope" title="Gyroscope Control"></iframe>
+</body>
+</html>
+```
+
+## 18. Minimal permission iframe (fullscreen only)
+```html
+<iframe src="https://www.example.com" style="width:100%; height:500px;"
+  allow="fullscreen" title="Minimal Fullscreen Frame"></iframe>
+```
+
+## 19. Compare fullscreen vs no-allow iframe
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <iframe src="https://www.example.com" width="500" height="300"
+    allow="fullscreen" title="With Fullscreen"></iframe>
+
+  <iframe src="https://www.example.com" width="500" height="300"
+    title="Without Any Permission"></iframe>
+</body>
+</html>
+```
+
+## 20. Styled iframe: shadow, rounded corners, no border
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.styled-frame {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  height: 420px;
+  width: 100%;
+}
+</style>
+</head>
+<body>
+  <iframe class="styled-frame" src="https://www.example.com"
+    allow="gyroscope" title="Styled Frame"></iframe>
+</body>
+</html>
+```
+
+## 21. Button-like link loading into named iframe (usb)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.btn-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+</style>
+</head>
+<body>
+  <a class="btn-link" href="https://device.example.com" target="myDeviceFrame">Open Device</a>
+  <iframe name="myDeviceFrame" src="" width="100%" height="400"
+    allow="usb" title="Device Frame"></iframe>
+</body>
+</html>
+```
+
+## 22. Iframe: fullscreen + usb
+```html
+<iframe src="https://www.example.com" width="700" height="450"
+  allow="fullscreen; usb" style="border:none;" title="Fullscreen + USB Frame"></iframe>
+```
+
+## 23. Responsive "video player" iframe (fullscreen + gyroscope)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+</style>
+</head>
+<body>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      allow="fullscreen; gyroscope" title="Responsive Video Player"></iframe>
+  </div>
+</body>
+</html>
+```
+
+## 24. Three iframes: fullscreen / gyroscope / usb
+```html
+<iframe src="https://www.example.com" width="400" height="300"
+  allow="fullscreen" title="Fullscreen Frame"></iframe>
+
+<iframe src="https://www.example.com" width="500" height="350"
+  allow="gyroscope" title="Gyroscope Frame"></iframe>
+
+<iframe src="https://device.example.com" width="450" height="320"
+  allow="usb" title="USB Frame"></iframe>
+```
+
+## 25. Header + large iframe (all 3 permissions)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { margin: 0; }
+header { background: #222; color: white; padding: 15px; }
+iframe { width: 100%; height: calc(100vh - 60px); border: none; }
+</style>
+</head>
+<body>
+  <header><h1>My App</h1></header>
+  <iframe src="https://www.example.com"
+    allow="fullscreen; gyroscope; usb" title="Main Content Frame"></iframe>
+</body>
+</html>
+```
+
+## 26. Fix the video iframe (remove disallowed permissions)
+```html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  allow="fullscreen"
+  title="Video"></iframe>
+```
+*(autoplay, camera, microphone removed — only `fullscreen` is a permitted value here)*
+
+## 27. Three links loading into one named iframe (fullscreen only)
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <ul>
+    <li><a href="https://www.example.com" target="linkFrame">Example</a></li>
+    <li><a href="https://www.wikipedia.org" target="linkFrame">Wikipedia</a></li>
+    <li><a href="https://www.mozilla.org" target="linkFrame">Mozilla</a></li>
+  </ul>
+  <iframe name="linkFrame" src="" width="100%" height="400"
+    allow="fullscreen" title="Link Target Frame"></iframe>
+</body>
+</html>
+```
+
+## 28. Iframe styled like a modern card (gyroscope only)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card-frame {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+</style>
+</head>
+<body>
+  <iframe class="card-frame" src="https://www.example.com"
+    allow="gyroscope" title="Card Style Frame"></iframe>
+</body>
+</html>
+```
+
+## 29. Two versions side by side (Version A vs Version B)
+```html
+<iframe src="https://www.example.com" width="45%" height="350"
+  allow="fullscreen" title="Version A"></iframe>
+
+<iframe src="https://www.example.com" width="45%" height="350"
+  allow="fullscreen; gyroscope; usb" title="Version B"></iframe>
+```
+
+## 30. Full best-practice HTML5 document
+```html
+<!DOCTYPE html>
+<html>
+<head><title>Best Practice Iframes</title></head>
+<body>
+
+  <!-- Normal iframe, no special permissions needed -->
+  <iframe src="https://www.example.com" width="100%" height="300"
+    title="Normal Webpage"></iframe>
+
+  <!-- Needs fullscreen and gyroscope for an interactive/video experience -->
+  <iframe src="https://www.example.com" width="100%" height="400"
+    allow="fullscreen; gyroscope" title="Fullscreen + Gyroscope Frame"></iframe>
+
+  <!-- Needs usb access for a device-control feature -->
+  <iframe src="https://device.example.com" width="100%" height="300"
+    allow="usb" title="USB Device Frame"></iframe>
+
+</body>
+</html>
+```

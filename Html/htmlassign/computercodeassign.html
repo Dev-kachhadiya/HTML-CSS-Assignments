@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Text Formatting Assignment</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+  }
+  h2 {
+    margin-top: 40px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Q6 - styled multi-line code block */
+  .code-block {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: monospace;
+  }
+
+  /* Q9 - styled keyboard element */
+  kbd.styled {
+    background-color: #f4f4f4;
+    border: 1px solid #999;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+
+  /* Q14 - styled kbd */
+  kbd.box {
+    background-color: #eee;
+    border: 1px solid #aaa;
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-family: monospace;
+  }
+
+  /* Q14 - styled pre */
+  pre.dark {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: monospace;
+  }
+
+  /* Q15 - readability styling */
+  pre.q15, kbd.q15 {
+    background-color: #f0f0f0;
+    padding: 6px;
+    border-radius: 5px;
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+
+<h2>1.</h2>
+<p>The Python function <code>len()</code> returns the number of items in an object.</p>
+
+<h2>2.</h2>
+<pre>
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+</pre>
+
+<h2>3.</h2>
+<p>To copy selected text, press <kbd>Ctrl + C</kbd> on your keyboard.</p>
+
+<h2>4.</h2>
+<p>When you run the program, it will display <samp>Hello, World!</samp> on the screen.</p>
+
+<h2>5.</h2>
+<p>The formula for force is <var>F</var> = <var>m</var>a, where <var>m</var> represents mass.</p>
+
+<h2>6.</h2>
+<pre class="code-block">
+for i in range(5):
+    print(i)
+</pre>
+
+<h2>7.</h2>
+<p>You can set the text color using the CSS property <code>color: red;</code>.</p>
+<pre>
+git add .
+git commit -m "update"
+git push origin main
+</pre>
+
+<h2>8.</h2>
+<p>After typing <kbd>pwd</kbd> in the terminal, the output will be <samp>/home/user/project</samp>.</p>
+
+<h2>9.</h2>
+<p>Press <kbd class="styled">Enter</kbd> to submit the form.</p>
+
+<h2>10.</h2>
+<p>In Bash, you can check if a file exists using the condition <code>test -f filename</code>.</p>
+
+<h2>11.</h2>
+<pre>
++--------+
+|        |
+|  BOX   |
+|        |
++--------+
+</pre>
+
+<h2>12.</h2>
+<p>The variable <var>count</var> is initialized with the assignment <code>count = 10</code>.</p>
+
+<h2>13.</h2>
+<p>Here is an inline code example: <code>margin: 0;</code>.</p>
+<p>Here is a keyboard shortcut example: press <kbd>Ctrl + S</kbd> to save.</p>
+<p>Here is a sample output example: the program prints <samp>Done!</samp>.</p>
+
+<h2>14.</h2>
+<p>Press <kbd class="box">Ctrl + Z</kbd> to undo your last action.</p>
+<pre class="dark">
+print("This is a code block")
+</pre>
+
+<h2>15.</h2>
+<p>To make text bold in CSS, use <code>font-weight: bold;</code>.</p>
+<pre class="q15">
+def greet(name):
+    print("Hello, " + name)
+</pre>
+<p>Press <kbd class="q15">Ctrl + Alt + Delete</kbd> to open the task manager.</p>
+<p>The program produced the sample output <samp>Error: File not found</samp>.</p>
+<p>In the equation, <var>x</var> represents the unknown value.</p>
+<p>To show angle brackets safely in HTML, escape them like this: <code>&lt;div&gt;</code>.</p>
+
+</body>
+</html>
